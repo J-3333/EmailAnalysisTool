@@ -50,13 +50,12 @@ This Email Analysis System is designed to help end users identify phishing, spam
    ```
 
 3. Configure the backend:
-   - Add the following API keys as environment variables
-     <ul>
-        <li>VIRUSTOTAL_API_KEY</li>
-        <li>WHOIS_API_KEY</li>
-        <li>PERPLEXITY_API_KEY</li>
-     </ul>
-   - Ensure the dataset path is correctly configured
+   - Add the following API keys as environment variables:
+     - `VIRUSTOTAL_API_KEY`
+     - `WHOIS_API_KEY`
+     - `PERPLEXITY_API_KEY`
+   - Ensure the dataset path is correctly configured.
+
 
 ## 🚀 Running the System
 
