@@ -35,8 +35,8 @@ batch_size = 32
 for i in range(0, len(data), batch_size):
     batch = data['subject'][i:i+batch_size].tolist()
     subject_embeddings.append(get_bert_embeddings_batch(batch))
-subject_embeddings = np.vstack(subject_embeddings)  # Stack into a 2D array
-np.save("subject_embeddings.npy", subject_embeddings)  # Save to file
+subject_embeddings = np.vstack(subject_embeddings)  
+np.save("subject_embeddings.npy", subject_embeddings)  
 print("Subject embeddings saved!")
 
 # Compute and save embeddings for body
@@ -45,8 +45,8 @@ body_embeddings = []
 for i in range(0, len(data), batch_size):
     batch = data['body'][i:i+batch_size].tolist()
     body_embeddings.append(get_bert_embeddings_batch(batch))
-body_embeddings = np.vstack(body_embeddings)  # Stack into a 2D array
-np.save("body_embeddings.npy", body_embeddings)  # Save to file
+body_embeddings = np.vstack(body_embeddings)  
+np.save("body_embeddings.npy", body_embeddings)  
 print("Body embeddings saved!")
 
 # Scale numerical features

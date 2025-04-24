@@ -50,7 +50,7 @@ html, body {
 
 /* Button Styling */
 .analyse-button {
-    background-color: #0078D4; /* Fluent UI Primary Blue */
+    background-color: #0078D4; 
     color: white;
     border: none;
     padding: 12px 24px;

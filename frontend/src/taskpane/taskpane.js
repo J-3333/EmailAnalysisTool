@@ -13,12 +13,10 @@ export async function run() {
   document.getElementById("loading-bar").style.display = "block";
   document.getElementById("email-details").innerHTML = "";
 
-  // Get full HTML and clean text separately
+ 
   const htmlBody = await getHtmlBodyAsync(item);
-  const body = normalizeEmailBody(stripHtml(htmlBody)); // Cleaned plain text
-  const urls = extractUrls(htmlBody);                    // Extract from full HTML
-
-  // Extract sender and headers
+  const body = normalizeEmailBody(stripHtml(htmlBody)); 
+  const urls = extractUrls(htmlBody);                    
   const sender = item.from ? item.from.emailAddress : "Unknown Sender";
   const subject = item.subject;
   const headers = await getHeadersAsync(item);
@@ -28,7 +26,7 @@ export async function run() {
 
   //Payload for backend
   const payload = {
-    sender_domain: sender.split("@")[1], // Extract domain from email address
+    sender_domain: sender.split("@")[1], 
     subject: subject,
     body: body,
     url_count: urls.length,
@@ -106,8 +104,8 @@ function getBodyAsync(item) {
   return new Promise((resolve) => {
     item.body.getAsync(Office.CoercionType.Html, (result) => {
       if (result.status === Office.AsyncResultStatus.Succeeded) {
-        const cleanText = stripHtml(result.value);          // Remove tags
-        resolve(normalizeEmailBody(cleanText));              // Clean up spacing etc.
+        const cleanText = stripHtml(result.value);         
+        resolve(normalizeEmailBody(cleanText));            
       } else {
         resolve("Failed to retrieve body.");
       }
@@ -129,7 +127,7 @@ function normalizeEmailBody(text) {
 
 const WHITELIST_DOMAINS = [
   /^www\.w3\.org$/,
-  /^ci\d+\.googleusercontent\.com$/, // Match ci5, ci12, etc.
+  /^ci\d+\.googleusercontent\.com$/, 
   /^fonts\.googleapis\.com$/,
   /^fonts\.gstatic\.com$/,
   /^schemas\.microsoft\.com$/,
@@ -388,7 +386,6 @@ function stripHtml(html) {
   const tagsToRemove = tempDiv.querySelectorAll("script, style, noscript, iframe, head");
   tagsToRemove.forEach(el => el.remove());
 
-  // Optionally: unwrap layout containers
   const wrappers = tempDiv.querySelectorAll("table, div, span");
   wrappers.forEach(el => {
     if (el.children.length === 1 && el.textContent.trim() === el.children[0].textContent.trim()) {
@@ -396,7 +393,7 @@ function stripHtml(html) {
     }
   });
 
-  // Return visible text
+  
   return tempDiv.textContent || tempDiv.innerText || "";
 }
 
@@ -407,7 +404,7 @@ function getHtmlBodyAsync(item) {
       if (result.status === Office.AsyncResultStatus.Succeeded) {
         resolve(result.value);
       } else {
-        resolve(""); // fallback on error
+        resolve(""); 
       }
     });
   });

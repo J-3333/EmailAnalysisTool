@@ -56,7 +56,7 @@ def analyze_perplexity():
                                              f"Subject: {subject}, Body: {body}, Sender: {sender}, URLs: {', '.join(urls) if urls else 'None'}, "
                                              f"SPF: {spf_result}, DKIM: {dkim_result}, DMARC: {dmarc_result}."}
             ],
-            "max_tokens": 150,  # Increased token count for complete responses
+            "max_tokens": 150, 
             "temperature": 0.3,
             "top_p": 0.9,
             "top_k": 5,
@@ -119,4 +119,4 @@ def analyze_perplexity():
         return jsonify({"error": f"Something went wrong: {str(e)}"}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)  # Running on a different port
+    app.run(debug=True, port=5001)  

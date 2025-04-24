@@ -150,7 +150,7 @@ SUSPICIOUS_SCORE_THRESHOLD = 5  # Flag as suspicious if total risk score is betw
 
 def calculate_risk_score(malicious_count, domain_age):
     """Assigns a risk score based on VirusTotal detections and WHOIS domain age."""
-    # If VirusTotal analysis failed, return 0 (unknown status)
+    
     if malicious_count is None:
         return 0
 
@@ -171,7 +171,7 @@ def calculate_risk_score(malicious_count, domain_age):
 
     # Domain Age Score Mapping
     if domain_age is None:
-        domain_age_score = 0  # Default to no risk if WHOIS fails
+        domain_age_score = 0 
     elif domain_age < 7:
         domain_age_score = 7  # High risk
     elif domain_age < 30:
@@ -190,7 +190,7 @@ def calculate_risk_score(malicious_count, domain_age):
 def analyze_email_links(urls):
     """Analyzes URLs using VirusTotal and WHOIS to assign a combined risk score."""
     results = []
-    analyzed_domains = {}  # To avoid duplicate lookups
+    analyzed_domains = {} 
 
     # Extract unique domains to avoid duplicate lookups
     unique_domains = set()
