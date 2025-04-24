@@ -1,0 +1,316 @@
+/* General Styling */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Header */
+.ms-welcome__header {
+    padding: 20px;
+    text-align: center;
+    background-color: #F1EDE7;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Logo Styling */
+.logo-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F1EDE7;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Welcome Text */
+.welcome-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+/* Main Section */
+.ms-welcome__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Button Styling */
+.analyse-button {
+    background-color: #0078D4; /* Fluent UI Primary Blue */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    margin-top: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+.analyse-button:hover {
+    background-color: #005A9E;
+    transform: scale(1.05);
+}
+
+.analyse-button:active {
+    background-color: #004680;
+    transform: scale(0.98);
+}
+
+/* Email Details Section */
+#email-details {
+    width: 90%;
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+#email-details:not(:empty) {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.result-section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.result-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.result-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.result-item {
+    margin: 10px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.result-label {
+    font-weight: 600;
+    color: #666;
+    min-width: 120px;
+}
+
+.result-value {
+    color: #333;
+}
+
+.domain-analysis {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.domain-analysis:last-child {
+    margin-bottom: 0;
+}
+
+.domain-separator {
+    height: 1px;
+    background-color: #e1e1e1;
+    margin: 15px 0;
+}
+
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status-safe {
+    background-color: #e6f3ff;
+    color: #0078D4;
+}
+
+.status-suspicious {
+    background-color: #fff4ce;
+    color: #856404;
+}
+
+.status-high-risk {
+    background-color: #fde7e9;
+    color: #a4262c;
+}
+
+.prediction-banner {
+    background-color: #f3f3f3;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prediction-banner[data-type="spam"] {
+    background-color: #fff4ce;
+}
+
+.prediction-banner[data-type="phishing"] {
+    background-color: #fde7e9;
+}
+
+.prediction-banner[data-type="safe"] {
+    background-color: #e6f3e6;
+}
+
+.prediction-text {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.prediction-text[data-type="spam"] {
+    color: #856404;
+}
+
+.prediction-text[data-type="phishing"] {
+    color: #a4262c;
+}
+
+.prediction-text[data-type="safe"] {
+    color: #107c10;
+}
+
+.confidence-badge {
+    background-color: #0078D4;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.warning-icon {
+    color: #856404;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.safe-icon {
+    color: #107c10;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Export Section */
+.export-section {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+}
+
+.export-button {
+    background-color: #107c10;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.export-button:hover {
+    background-color: #0b5a0b;
+    transform: scale(1.05);
+}
+
+.export-button:active {
+    background-color: #084a08;
+    transform: scale(0.98);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 500px) {
+    .logo-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .welcome-text {
+        font-size: 20px;
+    }
+
+    .analyse-button {
+        width: 100%;
+    }
+}
+
+/* Loading Bar Styles */
+.loading-bar {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loading-progress {
+    width: 0%;
+    height: 4px;
+    background-color: #0078D4;
+    animation: progress 2s ease-in-out infinite;
+}
+
+.loading-text {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+@keyframes progress {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 70%;
+    }
+    100% {
+        width: 100%;
+    }
+}

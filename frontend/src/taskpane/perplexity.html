@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perplexity Analysis</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+    <!-- Fluent UI for styling -->
+    <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.1.0/css/fabric.min.css"/>
+
+    <!-- Custom styles -->
+    <link href="perplexity.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter">
+        <div class="logo-container">
+            <img class="logo-img" src="../../assets/logo-filled.png" alt="Logo" title="Email Security" />
+        </div>
+        <h1 class="ms-font-su welcome-text">Welcome to Perplexity Analysis</h1>
+    </header>
+
+    <section id="sideload-msg" class="ms-welcome__main">
+        <h2 class="ms-font-xl">
+            Please <a target="_blank" href="https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing">
+            sideload</a> your add-in to see app body.
+        </h2>
+    </section>
+
+    <main id="app-body" class="ms-welcome__main" style="display: none;">
+        <div id="analyse-email-section">
+            <button id="extract-button" class="analyse-button">
+                Analyse with Perplexity
+            </button>
+            <div id="loading-bar" class="loading-bar" style="display: none;">
+                <div class="loading-progress"></div>
+                <div class="loading-text">Analyzing email...</div>
+            </div>
+            <div id="email-details"></div> 
+        </div>
+    </main>
+    
+    <script src="perplexity.js"></script>
+</body>
+
+</html>
