@@ -1,19 +1,21 @@
 # Email Analysis System
+This Email Analysis System is designed to help end users identify phishing, spam and legitimate emails directly within Microsoft Outlook. It includes:
+- A **frontend Office Add-in** for Outlook that extracts email content and metadata
+- A **backend analysis system** using machine learning to classify and analyze emails
 
-This system consists of a frontend Office Add-in for Outlook and a backend analysis system. This document provides instructions for setting up, running, and deploying the system.
 
-## System Requirements
+## 🧰 System Requirements
 
 - Node.js (v14 or higher)
 - Python 3.x
 - Microsoft 365 account for development
-- Office Add-in development tools
+- Office Add-in development tools (`yo office`, `office-addin-debugging`)
 
-## Frontend Setup (Office Add-in)
+## ⚙️ Frontend Setup (Office Add-in)
 
 1. Navigate to the frontend directory:
    ```bash
-   cd Frontend/Email\ Analysis
+   cd frontend
    ```
 
 2. Install dependencies:
@@ -22,10 +24,10 @@ This system consists of a frontend Office Add-in for Outlook and a backend analy
    ```
 
 3. Configure the add-in:
-   - Update the `manifest.xml` file with your add-in details
+   - Update the `manifest.xml` file with your add-in details (e.g., source URLs, IDs)
    - Configure the development server port in `package.json` if needed
 
-4. Development mode:
+4. Start development server:
    ```bash
    npm run dev-server
    ```
@@ -35,11 +37,11 @@ This system consists of a frontend Office Add-in for Outlook and a backend analy
    npm run build
    ```
 
-## Backend Setup
+## 🧠 Backend Setup
 
 1. Navigate to the backend directory:
    ```bash
-   cd Backend/Model
+   cd backend
    ```
 
 2. Install Python dependencies:
@@ -48,21 +50,20 @@ This system consists of a frontend Office Add-in for Outlook and a backend analy
    ```
 
 3. Configure the backend:
-   - Update configuration files with necessary API keys and settings
+   - Add VirusTotal, WhoIS and Perplexity API keys to environment variables
    - Ensure the dataset path is correctly configured
 
-## Running the System
-
-### Development Mode
+## 🚀 Running the System
 
 1. Start the backend server:
    ```bash
-   python email_analysis.py
+   python phishing_detection.py
+   python perplexity_analysis.py
    ```
 
 2. Start the frontend development server:
    ```bash
-   cd Frontend/Email\ Analysis
+   cd frontend
    npm run dev-server
    ```
 
@@ -71,38 +72,8 @@ This system consists of a frontend Office Add-in for Outlook and a backend analy
    npm run start
    ```
 
-### Production Deployment
 
-1. Build the frontend:
-   ```bash
-   cd Frontend/Email\ Analysis
-   npm run build
-   ```
-
-2. Deploy the backend:
-   - Set up a production server (e.g., Azure, AWS, or on-premises)
-   - Configure environment variables
-   - Deploy the Python application
-
-3. Deploy the Office Add-in:
-   - Package the add-in using the Office Add-in manifest
-   - Deploy to your organization's app catalog or the Office Store
-
-## Testing
-
-1. Run frontend tests:
-   ```bash
-   cd Frontend/Email\ Analysis
-   npm test
-   ```
-
-2. Run backend tests:
-   ```bash
-   cd Backend/Model
-   python -m pytest
-   ```
-
-## Troubleshooting
+## ❗ Troubleshooting
 
 Common issues and solutions:
 
@@ -121,7 +92,7 @@ Common issues and solutions:
    - Check model configuration
    - Review error logs
 
-## Security Considerations
+## 🔐 Security Considerations
 
 1. API Keys and Secrets:
    - Never commit sensitive information to version control
@@ -133,13 +104,5 @@ Common issues and solutions:
    - Follow data retention policies
    - Ensure compliance with relevant regulations
 
-## Support and Maintenance
-
-For support and maintenance:
-- Contact the development team
-- Check the issue tracker
-- Review the documentation
-
-## License
-
-[Add your license information here] 
+## 📄 License
+This project is licensed under the MIT License. See the [full license text](https://opensource.org/licenses/MIT) for more details.
