@@ -32,7 +32,7 @@ This Email Analysis System is designed to help end users identify phishing, spam
    npm run dev-server
    ```
 
-5. Build for production:
+5. Build for production (optional):
    ```bash
    npm run build
    ```
@@ -75,8 +75,15 @@ This Email Analysis System is designed to help end users identify phishing, spam
    ```bash
    npm run start
    ```
-
-
+   
+## 📥 Sideloading the Add-in in Outlook Web
+1. Open Outlook Web
+2. Click the ⚙️ Settings icon → View all Outlook settings
+3. Navigate to Mail > Customize actions > Add-ins
+4. Click + Add a custom add-in → Add from file
+5. Upload the manifest.xml file from the frontend directory
+6. The add-in will now be available in your Outlook toolbar
+   
 ## ❗ Troubleshooting
 
 Common issues and solutions:
